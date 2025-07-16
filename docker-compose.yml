@@ -7,7 +7,7 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - ${USERPROFILE}/.ollama:/root/.ollama
+      - ${OLLAMA_MODELS}:/root/.ollama
     environment:
       - OLLAMA_HOST=0.0.0.0
       - OLLAMA_MODEL=${model}
@@ -21,6 +21,7 @@ services:
       start_period: 60s
   ruimbot:
     image: yawpets/ruimbot:latest
+    pull_policy: always
     container_name: ruimbot
     environment:
       BOT_TOKEN: ${BOT_TOKEN}
