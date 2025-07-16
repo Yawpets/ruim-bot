@@ -2,7 +2,6 @@ services:
   ollama:
     image: ollama/ollama
     container_name: ollama-server
-    runtime: nvidia
     restart: unless-stopped
     ports:
       - "11434:11434"
