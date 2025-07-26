@@ -21,10 +21,13 @@ services:
       start_period: 60s
   ruimbot:
     image: yawpets/ruimbot:latest
+    runtime: nvidia
+    restart: unless-stopped
     pull_policy: always
     container_name: ruimbot
     environment:
       BOT_TOKEN: ${BOT_TOKEN}
       model: ${model}
+      NVIDIA_VISIBLE_DEVICES: all
     volumes:
       - ${RUIM_DATA_DIR}:/app/data
