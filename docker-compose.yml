@@ -28,6 +28,7 @@ services:
     environment:
       BOT_TOKEN: ${BOT_TOKEN}
       model: ${model}
+      SERPER_API_KEY: ${SERPER_API_KEY}
       NVIDIA_VISIBLE_DEVICES: all
     volumes:
       - ${RUIM_DATA_DIR}:/app/data
