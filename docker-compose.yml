@@ -29,5 +29,7 @@ services:
       BOT_TOKEN: ${BOT_TOKEN}
       model: ${model}
       NVIDIA_VISIBLE_DEVICES: all
+    env_file:
+      - .env
     volumes:
       - ${RUIM_DATA_DIR}:/app/data
